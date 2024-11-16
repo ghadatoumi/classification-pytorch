@@ -36,7 +36,7 @@ jobs:
 
       - name: Modify DVC Remote
         run: |
-          uv run dvc remote modify --local myremote gdrive_service_account_json_file_path credentials.json
+          uv run dvc remote modify myremote --local drive_service_account_json_file_path credentials.json
 
       - name: DVC Pull Data
         run: |
