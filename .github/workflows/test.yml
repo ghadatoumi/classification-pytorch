@@ -32,11 +32,11 @@ jobs:
         env:
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
-          echo $GDRIVE_CREDENTIALS_DATA > credentials_1.json
+          echo $GDRIVE_CREDENTIALS_DATA > credentials.json
 
       - name: Modify DVC Remote
         run: |
-          uv run dvc remote modify --local myremote gdrive_service_account_json_file_path certain-haiku-441918-i3-fa28d632cae0.json
+          uv run dvc remote modify --local myremote gdrive_service_account_json_file_path credentials.json
 
       - name: DVC Pull Data
         run: |
